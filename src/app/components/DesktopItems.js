@@ -6,7 +6,11 @@ import { BiSolidFilePdf } from "react-icons/bi";
 import { FaGamepad } from "react-icons/fa";
 import "react-toastify/dist/ReactToastify.css";
 
-const DesktopItems = ({ isStartMenuOpen, setShowModal, setGame }) => {
+const DesktopItems = ({
+  isStartMenuOpen,
+  setShowModal,
+  setShowProfileModal,
+}) => {
   return (
     <div className={isStartMenuOpen ? "hidden" : "block w-full"}>
       <div className="flex flex-col items-start justify-start w-full p-8 gap-6">

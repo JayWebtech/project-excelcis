@@ -23,7 +23,7 @@ const Menu = ({
     <div
       className={
         isStartMenuOpen
-          ? "flex flex-col items-center justify-center flex-grow bg-slate-900 bg-opacity-30 w-full"
+          ? "flex flex-col items-center justify-center flex-grow bg-slate-900 bg-opacity-30 w-full "
           : "flex flex-col items-center justify-center flex-grow"
       }
     >

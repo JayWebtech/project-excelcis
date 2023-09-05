@@ -13,6 +13,7 @@ const Page = () => {
   const [screenWidth, setScreenWidth] = useState(null);
 
   const [showModal, setShowModal] = useState(false);
+  const [showProfileModal, setShowProfileModal] = useState(false);
   const [experience, setexperience] = useState(false);
   const [impact, setImpact] = useState(false);
   const [education, setEducation] = useState(false);
@@ -66,6 +67,7 @@ const Page = () => {
         isClick={isClick}
         screenSet={screenSet}
         setShowModal={setShowModal}
+        setShowProfileModal={setShowProfileModal}
       />
     </main>
   );

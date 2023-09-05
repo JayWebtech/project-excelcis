@@ -4,6 +4,7 @@ import { FcFolder } from "react-icons/fc";
 import { VscGithubInverted } from "react-icons/vsc";
 import { AiFillLinkedin } from "react-icons/ai";
 import { FaStickyNote } from "react-icons/fa";
+import { BiUserCircle } from "react-icons/bi";
 import { BsFillCloudFill } from "react-icons/bs";
 import Link from "next/link";
 
@@ -15,14 +16,16 @@ const Taskbar = ({
   isClick,
   screenSet,
   setShowModal,
+  setShowProfileModal,
   screen,
 }) => {
   const [isStartMenuHovered, setIsStartMenuHovered] = useState(false);
   const [currentTime, setCurrentTime] = useState(new Date());
   const [isProjectsHovered, setIsProjectsHovered] = useState(false);
+  const [isProfileHovered, setIsProfileHovered] = useState(false);
   const [isGithubHovered, setIsGithubHovered] = useState(false);
   const [isLinkedInHovered, setIsLinkedInHovered] = useState(false);
-  const [isArticlesHovered, setisArticlesHovered] = useState(false);
+  const [isArticlesHovered, setIsArticlesHovered] = useState(false);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -79,6 +82,23 @@ const Taskbar = ({
           {isStartMenuHovered && !isStartMenuOpen && (
             <span className="bg-black text-white p-2 rounded-md absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 text-[13px] w-[100px] text-center">
               Start Menu
+            </span>
+          )}
+        </div>
+        <div
+          className="p-1 rounded-md relative transition duration-100 hover:shadow-xl hover:bg-slate-900 hover:bg-opacity-50 hover:cursor-pointer hover:backdrop-blur-lg "
+          onMouseEnter={() => setIsProfileHovered(true)}
+          onMouseLeave={() => setIsProfileHovered(false)}
+          onClick={() => {
+            const audio = new Audio("click.wav");
+            audio.play();
+            setShowProfileModal(true);
+          }}
+        >
+          <BiUserCircle className="text-4xl" />
+          {isProfileHovered && (
+            <span className="bg-black text-white p-2 rounded-md absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 text-[13px] w-[100px] text-center">
+              Profile
             </span>
           )}
         </div>
@@ -151,8 +171,8 @@ const Taskbar = ({
         >
           <div
             className="p-1 rounded-md relative transition duration-100 hover:shadow-xl hover:bg-slate-900 hover:bg-opacity-50 hover:cursor-pointer hover:backdrop-blur-lg "
-            onMouseEnter={() => setisArticlesHovered(true)}
-            onMouseLeave={() => setisArticlesHovered(false)}
+            onMouseEnter={() => setIsArticlesHovered(true)}
+            onMouseLeave={() => setIsArticlesHovered(false)}
           >
             <FaStickyNote className="text-[36px] text-[#00acee]" />
             {isArticlesHovered && (
